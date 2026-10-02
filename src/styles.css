@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+}
+
+body {
+  margin: 0;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  background: #f5f7fb;
+  transition: 0.2s;
+}
+
+.header {
+  background: #172033;
+  color: white;
+  padding: 28px max(20px, calc((100% - 1180px) / 2));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
+
+.header p {
+  margin: 0;
+  opacity: 0.75;
+}
+
+.theme-btn {
+  border: 1px solid #526078;
+  background: transparent;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 25px auto 50px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.stat, .card {
+  background: white;
+  border: 1px solid #e4e8f0;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(20, 30, 50, 0.05);
+}
+
+.stat {
+  padding: 18px;
+}
+
+.stat span {
+  display: block;
+  color: #667085;
+  font-size: 13px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+.card {
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-title h2 {
+  margin-top: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid #d6dbe5;
+  border-radius: 8px;
+  padding: 11px 12px;
+  outline: none;
+  background: white;
+  color: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #5667f5;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.primary, .secondary, .actions button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.primary {
+  background: #5667f5;
+  color: white;
+  font-weight: 600;
+}
+
+.secondary {
+  background: #edf0f5;
+  color: #333;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr 180px 180px;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.search {
+  min-width: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+th, td {
+  text-align: left;
+  padding: 14px 10px;
+  border-bottom: 1px solid #edf0f5;
+  font-size: 14px;
+}
+
+th {
+  color: #667085;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.badge {
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.applied { background: #e9eefc; color: #4055c7; }
+.badge.interview { background: #fff3d8; color: #9a6800; }
+.badge.offer { background: #dcf7e8; color: #177245; }
+.badge.rejected { background: #fde5e5; color: #ad3030; }
+
+.actions {
+  display: flex;
+  gap: 7px;
+}
+
+.actions button {
+  background: #edf0f5;
+}
+
+.actions .danger {
+  color: #b42318;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #667085;
+}
+
+.empty-icon {
+  font-size: 40px;
+}
+
+.error {
+  color: #d92d20;
+  display: block;
+  margin-top: 5px;
+}
+
+.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.dark .card,
+.dark .stat {
+  background: #182236;
+  border-color: #29364d;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background: #101827;
+  color: #e5e7eb;
+  border-color: #3a465d;
+}
+
+.dark th,
+.dark td {
+  border-color: #29364d;
+}
+
+.dark .secondary,
+.dark .actions button {
+  background: #29364d;
+  color: #e5e7eb;
+}
+
+.dark .stat span,
+.dark th,
+.dark .empty {
+  color: #aab4c5;
+}
+
+@media (max-width: 800px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid,
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
